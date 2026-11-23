@@ -17,6 +17,7 @@ class Controller extends StatefulWidget {
 
 class ControllerState extends State<Controller> {
   final Counter counter = Counter();
+  void increment() => setState(() => counter.increment());
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,9 @@ class ControllerState extends State<Controller> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: BodyView(counter: counter.count),
-      floatingActionButton: const ActionView(),
+      floatingActionButton:  ActionView(
+        increment: increment,
+      ),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ActionView extends StatelessWidget {
-  const ActionView({super.key});
+  final VoidCallback increment;
+  const ActionView({super.key, required this.increment});
  
   
   @override
@@ -10,7 +11,7 @@ class ActionView extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        FloatingActionButton(onPressed: (){},
+        FloatingActionButton(onPressed: increment,
         child: const Icon(Icons.add),
         ),
         FloatingActionButton(onPressed: (){},
