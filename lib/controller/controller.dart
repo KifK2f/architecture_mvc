@@ -18,6 +18,7 @@ class Controller extends StatefulWidget {
 class ControllerState extends State<Controller> {
   final Counter counter = Counter();
   void increment() => setState(() => counter.increment());
+  void decrement(int number) => setState(() => counter.decrement(number));
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class ControllerState extends State<Controller> {
       body: BodyView(counter: counter.count),
       floatingActionButton:  ActionView(
         increment: increment,
+        decrement: decrement,
       ),
     );
   }
